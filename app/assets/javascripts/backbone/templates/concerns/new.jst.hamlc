@@ -1,0 +1,15 @@
+%h1 New concern
+
+%form#new-concern.form-horizontal{:name=>"concern"}
+  .field
+    %label{:for=>"title"} Title:
+    %input#title{:type=>"text", :name=>"title", :value => @title}
+
+  .field
+    %label{:for=>"content"} Content
+    %input#content{:type=>"text", :name=>"content", :value => @content}
+
+  .actions
+    %input{:type=>"submit", :value=>"Create Concern"}
+
+%a{:href=>"#/index"} Back

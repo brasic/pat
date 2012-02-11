@@ -1,0 +1,12 @@
+.bundle
+db/*.sqlite3
+log/*.log
+tmp/
+.*un~
+.*.swp
+coverage/
+pkg/
+*.sql
+*.lock
+*.tar.gz
+public/assets
