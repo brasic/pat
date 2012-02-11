@@ -4,9 +4,7 @@
   %tr
     %th Title
     %th Content
-    %th 
-    %th 
-    %th 
+    %th Actions
 
 %br
 

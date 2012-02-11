@@ -15,7 +15,6 @@ class Pat.Routers.ConcernsRouter extends Backbone.Router
     $("#concerns").html(@view.render().el)
 
   index: ->
-    console.log('sdfsdf')
     @view = new Pat.Views.Concerns.IndexView(concerns: @concerns)
     $("#concerns").html(@view.render().el)
 
