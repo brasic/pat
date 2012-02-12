@@ -1,24 +1,7 @@
-%h1 New concern
-- if @errors
-  #alert.alert.error.fade.in
-    %a.close{:href="#"} x
-    %strong There are errors
-    %ul
-      -for name,text of @errors
-        %li="#{name}: #{text}"
+= @_errors(@model.attributes)
 
-%form#new-concern.form-horizontal.well{:name=>"concern"}
-
-  .field
-    %label{:for=>"title"} Title:
-    %input#title{:type=>"text", :name=>"title", :value => @title}
-
-  .field
-    %label{:for=>"content"} Content
-    %input#content{:type=>"text", :name=>"content", :value => @content}
-
-  .form-actions
-    %input{:type=>"submit", :value=>"Create Concern"}
-      %button
+%form#new-concern.form-horizontal{:name=>"concern"}
+  = @_form(this)
 
 %a{:href=>"#/index"} Back
+

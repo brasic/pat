@@ -1,0 +1,7 @@
+- if @errors
+  #alert.alert.error.alert-error.fade.in
+    %a.close{:href="#","data-dismiss"=>'alert'} &times;
+    %strong There are errors:
+    %ul
+      -for name,text of @errors
+        %li="#{name}: #{text}"

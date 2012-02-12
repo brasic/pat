@@ -1,15 +1,7 @@
-%h1 Edit concern
+= @_errors(@model.attributes)
 
 %form#edit-concern.form-horizontal{:name=>"concern"}
-  .field
-    %label{:for=>"title"} Title:
-    %input#title{:type=>"text", :name=>"title", :value => @title}
-
-  .field
-    %label{:for=>"content"} Content
-    %input#content{:type=>"text", :name=>"content", :value => @content}
-
-  .actions
-    %input{:type=>"submit", :value=>"Update Concern"}
+  = @_form(this)
 
 %a{:href=>"#/index"} Back
+

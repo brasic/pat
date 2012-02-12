@@ -1,0 +1,16 @@
+-c=(if @errors? and @errors.title? then "error")
+.control-group{class: c}
+  %label.control-label{:for=>"title"} Title:
+  .controls
+    %input#title{type: "text", name:"title", value: @title}
+    - if c
+      %span.help-inline= @errors.title
+
+-c=false
+-c=(if @errors? and @errors.content? then "error")
+.control-group{class: c}
+  %label.control-label{:for=>"content"} Content
+  .controls
+    %input#content{type:"text", name:"content", value: @content}
+    - if c
+      %span.help-inline= @errors.content

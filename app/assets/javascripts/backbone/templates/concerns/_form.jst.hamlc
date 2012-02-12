@@ -1,0 +1,7 @@
+.fieldset
+  %legend #{@type.capitalize()} Concern
+
+  = @_form_fields(@model.attributes)
+
+  .form-actions
+    %button.btn.btn-primary{:type=>"submit"} Save

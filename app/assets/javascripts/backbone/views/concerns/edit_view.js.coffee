@@ -1,24 +1,16 @@
-Pat.Views.Concerns ||= {}
+#= require backbone/views/concerns/form_view
 
-class Pat.Views.Concerns.EditView extends Backbone.View
-  template : JST["backbone/templates/concerns/edit"]
+class Pat.Views.Concerns.EditView extends Pat.Views.Concerns.FormView
+  template:     JST["backbone/templates/concerns/edit"]
 
-  events :
+  type: "edit"
+
+  events:
     "submit #edit-concern" : "update"
 
-  update : (e) ->
+  update: (e) ->
     e.preventDefault()
     e.stopPropagation()
 
-    @model.save(null,
-      success : (concern) =>
-        @model = concern
-        window.location.hash = "/#{@model.id}"
-    )
-
-  render : ->
-    $(@el).html(@template(@model.toJSON() ))
-
-    this.$("form").backboneLink(@model)
-
-    return this
+    @model.unset("errors")
+    @model.save(null,@response_handlers(@model))

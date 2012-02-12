@@ -1,37 +1,16 @@
-Pat.Views.Concerns ||= {}
+#= require backbone/views/concerns/form_view
 
-class Pat.Views.Concerns.NewView extends Backbone.View
+class Pat.Views.Concerns.NewView extends Pat.Views.Concerns.FormView
   template: JST["backbone/templates/concerns/new"]
+
+  type: "new"
 
   events:
     "submit #new-concern": "save"
-
-  constructor: (options) ->
-    super(options)
-    @model = new @collection.model()
-
-    @model.bind("change:errors", () =>
-      this.render()
-    )
 
   save: (e) ->
     e.preventDefault()
     e.stopPropagation()
 
     @model.unset("errors")
-
-    @collection.create(@model.toJSON(),
-      success: (concern) =>
-        @model = concern
-        window.location.hash = "/#{@model.id}"
-
-      error: (concern, jqXHR) =>
-        @model.set({errors: $.parseJSON(jqXHR.responseText)})
-    )
-
-  render: ->
-    $(@el).html(@template(@model.toJSON() ))
-
-    this.$("form").backboneLink(@model)
-
-    return this
+    @collection.create(@model.toJSON(),@response_handlers(@model))
