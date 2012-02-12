@@ -55,5 +55,11 @@ module Pat
 
     # Version of your assets, change this if you want to expire all your assets
     config.assets.version = '1.0'
+
+    # we want to render templates inside other templates
+    config.hamlcoffee.escapeHtml = false
+
   end
 end
+
+ActiveRecord::Base.include_root_in_json = false
