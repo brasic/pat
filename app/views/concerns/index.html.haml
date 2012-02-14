@@ -1,6 +1,7 @@
 :javascript
   $(function() {
-    window.router = new Pat.Routers.ConcernsRouter({concerns: #{@concerns.to_json.html_safe}});
+    console.log('starting...');
+    window.app = new Pat.Routers.ConcernsRouter({concerns: #{@concerns.to_json.html_safe}});
     Backbone.history.start();
   });
 #concerns

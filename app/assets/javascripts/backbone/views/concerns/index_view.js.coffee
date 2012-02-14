@@ -4,6 +4,7 @@ class Pat.Views.Concerns.IndexView extends Backbone.View
   template: JST["backbone/templates/concerns/index"]
 
   initialize: () ->
+    console.log @options
     @options.concerns.bind('reset', @addAll)
 
   addAll: () =>

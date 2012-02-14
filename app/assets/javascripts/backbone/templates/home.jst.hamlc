@@ -1,0 +1,27 @@
+.hero-unit{:style => "height:260px;"}
+  %h2 Preventative Action Tool
+  %p  
+  %img{:alt => "", :height => "200", :src => "assets/quality.jpg", :style => "float:left", :width => "300"}
+    %p{:style => "padding-top:50px;padding-left:340px;"}
+      Pat pulls data from 
+      %a{href: 'https://rally1.rallydev.com'} Rally,
+      Quality Center, and Team Track.
+      It's built on 
+      %a{:href => "http://rubyonrails.org/"} Ruby on Rails
+      and
+      %a{:href => "http://documentcloud.github.com/backbone/"} Backbone.js.
+      %br/
+      %br/
+.row
+  .span4
+    %h2 Try It
+    %p
+      Enter a few characters in the Search Box in the upper right corner of the screen, and select an issue.
+    %p
+      %a#showMeBtn.btn{:href => "#"} Show Me »
+  .span4
+    %h2 Get It
+    %p
+      The source code for this application is maintained on GitHub.
+    %p
+      %a.btn{:href => "https://github.com/Pearson-AI/pat"} Download »
