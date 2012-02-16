@@ -8,9 +8,9 @@
       %a.brand{:href => "#"} Pat
       .nav-collapse
         %ul.nav
-          %li.active
+          %li#nav-home
             %a{:href => "#"} Home
-          %li
+          %li#nav-index
             %a{:href => "#/index"} Concerns
         %form#searchForm.navbar-search.pull-right.dropdown
           %input#searchText.search-query.dropdown-toggle{:placeholder => "Search", :type => "text"}
