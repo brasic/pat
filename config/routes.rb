@@ -1,5 +1,6 @@
 Pat::Application.routes.draw do
   resources :concerns
+  root to: 'concerns#index'
 
   # The priority is based upon order of creation:
   # first created -> highest priority.
