@@ -4,7 +4,6 @@ class Pat.Views.Concerns.IndexView extends Backbone.View
   template: JST["backbone/templates/concerns/index"]
 
   initialize: () ->
-    console.log @options
     @options.concerns.bind('reset', @addAll)
 
   addAll: () =>
@@ -15,7 +14,6 @@ class Pat.Views.Concerns.IndexView extends Backbone.View
     @$("tbody").append(view.render().el)
 
   render: =>
-    $(@el).html(@template(concerns: @options.concerns.toJSON() ))
+    this.$el.html(@template(concerns: @options.concerns.toJSON() ))
     @addAll()
-
-    return this
+    this

@@ -37,4 +37,4 @@ class Pat.Views.Concerns.FormView extends Backbone.View
 
     this.$("form").backboneLink(@model)
 
-    return this
+    this

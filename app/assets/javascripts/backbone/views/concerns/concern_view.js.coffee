@@ -16,4 +16,4 @@ class Pat.Views.Concerns.ConcernView extends Backbone.View
 
   render: ->
     $(@el).html(@template(@model.toJSON() ))
-    return this
+    this

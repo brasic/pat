@@ -18,7 +18,7 @@ class Pat.Routers.ConcernsRouter extends Backbone.Router
     unless @homeView
       @homeView = new Pat.Views.HomeView()
       @homeView.render()
-    $("#content").html(@homeView.el)
+    $("#concerns").html(@homeView.el)
 
   newConcern: ->
     @view = new Pat.Views.Concerns.NewView(collection: @concerns)
@@ -27,7 +27,6 @@ class Pat.Routers.ConcernsRouter extends Backbone.Router
   index: ->
     console.log @concerns
     @view = new Pat.Views.Concerns.IndexView(concerns: @concerns)
-    console.log 'as'
     $("#concerns").html(@view.render().el)
 
   show: (id) ->
@@ -47,5 +46,4 @@ class Pat.Routers.ConcernsRouter extends Backbone.Router
 
     $(".header").html @headerView.render().el
     $("body").click ->
-      console.log 'rm dropdown'
       $(".dropdown").removeClass "open"
