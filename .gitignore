@@ -10,3 +10,4 @@ pkg/
 *.lock
 *.tar.gz
 public/assets
+.idea
