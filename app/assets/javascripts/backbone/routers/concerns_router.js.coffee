@@ -1,8 +1,15 @@
 class Pat.Routers.ConcernsRouter extends Backbone.Router
 
   initialize: (options) ->
+
+    # Create and populate the list of concerns (our main collection)
     @concerns = new Pat.Collections.ConcernsCollection()
     @concerns.reset options.concerns
+
+    # Create and populate the list of users.
+    window.users    = new Pat.Collections.UsersCollection()
+    window.users.reset options.users
+
     @make_header()
 
   routes:
