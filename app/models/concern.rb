@@ -3,6 +3,7 @@ class Concern
 
   key :title
   key :content
+  key :status
 
   many :comments
   timestamps!
