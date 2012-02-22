@@ -144,9 +144,3 @@
   document.createElement("abbr");
   document.createElement("time");
 }(jQuery));
-
-
-$.timeago.settings.allowFuture = true;
-$(document).ready(function() {
-    jQuery("abbr.timeago").timeago();
-});
