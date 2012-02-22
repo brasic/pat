@@ -11,6 +11,6 @@
 .control-group{class: c}
   %label.control-label{:for=>"content"} Content
   .controls
-    %input#content{type:"text", name:"content", value: @content}
+    %textarea#content.input-xlarge{type:"text", name:"content", value: @content,rows:4}
     - if c
       %span.help-inline= @errors.content
