@@ -1,0 +1,4 @@
+%td= @text
+%td
+  %abbr.timeago{title:"#{@updated_at}"}= @updated_at
+%td= @user.attributes.name

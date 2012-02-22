@@ -1,9 +1,9 @@
-%p
-  %b Title:
-  = @title
+%h1.page-header= @title
 
-%p
-  %b Content:
+%h3 Summary
+%p.well
   = @content
+
+#comments-list
 
 %a{:href => "#/index"} Back

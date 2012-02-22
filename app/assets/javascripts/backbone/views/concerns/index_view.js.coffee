@@ -14,6 +14,6 @@ class Pat.Views.Concerns.IndexView extends Backbone.View
     @$("tbody").append(view.render().el)
 
   render: =>
-    this.$el.html(@template(concerns: @options.concerns.toJSON() ))
+    @$el.html(@template(concerns: @options.concerns.toJSON() ))
     @addAll()
     this

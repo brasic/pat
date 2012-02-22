@@ -25,14 +25,15 @@ class Pat.Routers.ConcernsRouter extends Backbone.Router
     $("#concerns").html(@view.render().el)
 
   index: ->
-    console.log @concerns
     @view = new Pat.Views.Concerns.IndexView(concerns: @concerns)
     $("#concerns").html(@view.render().el)
 
   show: (id) ->
     concern = @concerns.get(id)
+    comments = new Pat.Collections.CommentsCollection()
+    comments.reset concern.attributes.comments
 
-    @view = new Pat.Views.Concerns.ShowView(model: concern)
+    @view = new Pat.Views.Concerns.ShowView(model: concern, comments: comments)
     $("#concerns").html(@view.render().el)
 
   edit: (id) ->
