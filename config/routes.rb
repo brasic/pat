@@ -1,4 +1,6 @@
 Pat::Application.routes.draw do
+  resources :users
+
   resources :concerns
   root to: 'concerns#index'
 
