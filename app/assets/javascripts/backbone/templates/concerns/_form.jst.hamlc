@@ -1,7 +1,8 @@
-.fieldset
-  %legend #{@type.capitalize()} Concern
+.span8
+  .fieldset
+    %legend #{@type.capitalize()} Concern
 
-  = @_form_fields(@model.attributes)
+    = @_form_fields(@model.attributes)
 
-  .form-actions
-    %button.btn.btn-primary{:type=>"submit"} Save
+    .form-actions
+      %button.btn.btn-primary{:type=>"submit"} Save
