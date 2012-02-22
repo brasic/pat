@@ -7,8 +7,8 @@ class Pat.Routers.ConcernsRouter extends Backbone.Router
     @concerns.reset options.concerns
 
     # Create and populate the list of users.
-    window.users    = new Pat.Collections.UsersCollection()
-    window.users.reset options.users
+    window.Users    = new Pat.Collections.UsersCollection()
+    window.Users.reset options.users
 
     @make_header()
 

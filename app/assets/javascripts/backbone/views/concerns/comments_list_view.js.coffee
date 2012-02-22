@@ -4,7 +4,6 @@ class Pat.Views.Concerns.CommentsListView extends Backbone.View
   template: JST["backbone/templates/concerns/comments_list"]
 
   initialize: () ->
-    window.qq=@options
     @options.comments.bind('reset', @addAll)
 
   addAll: () =>
