@@ -3,6 +3,7 @@ class ConcernsController < ApplicationController
   # GET /concerns.json
   def index
     @concerns = Concern.all
+    @users    = User.all
 
     respond_to do |format|
       format.html # index.html.erb
