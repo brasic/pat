@@ -20,7 +20,7 @@ gem 'thin'
 
 
 # server side template stuff
-gem 'haml'
+gem 'haml_rails'
 
 
 # client side
