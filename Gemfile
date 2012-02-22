@@ -1,6 +1,7 @@
 source 'https://rubygems.org'
 
 gem 'rails', '3.2.1'
+gem 'rails3-generators'
 
 gem 'sqlite3'
 gem "mongo_mapper"

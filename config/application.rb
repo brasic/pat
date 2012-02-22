@@ -62,6 +62,11 @@ module Pat
     # we want to render templates inside other templates
     config.hamlcoffee.escapeHtml = false
 
+    config.generators do |g|
+      g.template_engine  :haml
+    end
+
+
   end
 end
 
