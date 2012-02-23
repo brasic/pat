@@ -7,3 +7,5 @@
 #comments-list
 
 %a{:href => "#/index"} Back
+|
+%a{:href => "#/#{@id}/edit"} Edit

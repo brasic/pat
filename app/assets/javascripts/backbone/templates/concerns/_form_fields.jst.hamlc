@@ -25,3 +25,6 @@
     %label.radio
       %input{type:'radio',name:'status',value:'Closed'}
       Closed
+    %label.radio
+      %input{type:'radio',name:'status',value:'Blocked'}
+      Blocked
