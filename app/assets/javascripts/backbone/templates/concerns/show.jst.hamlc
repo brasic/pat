@@ -1,6 +1,8 @@
 %h1.page-header
   = @title
-  %span.label.status{class: "#{@status}" }= @status
+  %span.label.status{class: "#{@status}" }
+    = @status
+    Since sometime ago
 %p.well.markdown
   = @content
 

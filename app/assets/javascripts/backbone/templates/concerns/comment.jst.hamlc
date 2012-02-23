@@ -1,4 +1,6 @@
 %li.comment.span8
+  .comment-title
+    .user-id= @updater_id
   .comment-text.well.markdown= @text
   .comment-metadata
     %span.when-updated
