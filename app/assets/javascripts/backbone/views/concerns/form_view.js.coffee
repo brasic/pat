@@ -34,7 +34,7 @@ class Pat.Views.Concerns.FormView extends Backbone.View
 
     # @template will be defined by child classes.
     $(@el).html(@template(this))
-
+    @$('.markdown').markItUp(myMarkdownSettings)
     this.$("form").backboneLink(@model)
 
     this

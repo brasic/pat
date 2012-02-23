@@ -1,7 +1,6 @@
 %h1.page-header= @title
-
 %h3 Summary
-%p.well
+%p.well.markdown
   = @content
 
 #comments-list

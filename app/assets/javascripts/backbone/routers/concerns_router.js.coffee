@@ -12,6 +12,8 @@ class Pat.Routers.ConcernsRouter extends Backbone.Router
 
     @make_header()
 
+    window.marker = new Showdown.converter().makeHtml
+
   routes:
     ""          : "home"
     "/new"      : "newConcern"

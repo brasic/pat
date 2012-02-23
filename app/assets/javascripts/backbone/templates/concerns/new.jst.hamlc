@@ -1,8 +1,7 @@
 = @_errors(@model.attributes)
 
 %form#new-concern.form-horizontal{:name=>"concern"}
-  .row
-    = @_form(this)
+  = @_form(this)
 
 %a{:href=>"#/index"} Back
 
