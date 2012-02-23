@@ -14,7 +14,8 @@ class Pat.Views.Concerns.IndexView extends Backbone.View
   fixUsers: ->
     @$('.user-id').each (user,a) ->
       id = $(this).text()
-      $(this).text(Users.get(id).attributes.name)
+      user = Users.get(id) || {attributes:{name:'Someone'}}
+      $(this).text(user.attributes.name)
 
   addOne: (concern) =>
     view = new Pat.Views.Concerns.ConcernView({model : concern})
