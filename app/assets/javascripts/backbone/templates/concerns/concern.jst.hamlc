@@ -3,9 +3,14 @@
   .user-id= @creator_id
 %td
   %span.label.status{class: "#{@status}" }= @status
-%td
-  %a{:href => "#/#{@id}"} Show
-  |
-  %a{:href => "#/#{@id}/edit"} Edit
-  |
-  %a.destroy{:href => "#/#{@id}/destroy"} Destroy
+%td.actions
+  %span.actions-group
+    %a.btn{:href => "#/#{@id}"}
+      %i.icon-share-alt
+      Show
+    %a.btn{:href => "#/#{@id}/edit"}
+      %i.icon-pencil
+      Edit
+    %a.btn.destroy{:href => "#/#{@id}/destroy"}
+      %i.icon-trash
+      Delete

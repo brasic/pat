@@ -6,6 +6,9 @@
 
 #comments-list
 
-%a{:href => "#/index"} Back
-|
-%a{:href => "#/#{@id}/edit"} Edit
+%a.btn{:href => "#/index"}
+  %i.icon-home
+  Back
+%a.btn{:href => "#/#{@id}/edit"}
+  %i.icon-pencil
+  Edit

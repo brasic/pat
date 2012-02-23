@@ -5,8 +5,10 @@
     %th Title
     %th Creator
     %th Status
-    %th Actions
+    %th.actions Actions
 
 %br
 
-%a{:href=>"#/new"}New Concern
+%a.btn.btn-primary{:href=>"#/new"}
+  %i.icon-file.icon-white
+  New Concern
