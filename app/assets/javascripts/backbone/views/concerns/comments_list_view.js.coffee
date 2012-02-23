@@ -12,7 +12,7 @@ class Pat.Views.Concerns.CommentsListView extends Backbone.View
 
   addOne: (comment) =>
     view = new Pat.Views.Concerns.CommentView(model: comment)
-    @$("tbody").append(view.render().el)
+    @$("ul.comments").append(view.render().el)
 
   render: ->
     $(@el).html(@template())

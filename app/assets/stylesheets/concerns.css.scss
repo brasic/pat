@@ -23,3 +23,18 @@ span.status.Open {
 span.status.Blocked {
    background-color: #953B39;
 }
+
+ul.comments{
+  list-style-type: none;
+}
+
+li .comment-text{
+  background-color:whiteSmoke;
+  margin:5px;
+  padding:5px;
+}
+
+li .comment-metadata{
+  float:right;
+  margin-bottom:1em;
+}

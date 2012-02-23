@@ -1,4 +1,7 @@
-%td= @text
-%td
-  %abbr.timeago{title:"#{@updated_at}"}= @updated_at
-%td= @creator_id
+%li.comment.span8
+  .comment-text.well
+    = @text
+  .comment-metadata
+    %span.when-updated
+      %abbr.timeago{title:"#{@updated_at}"}= @updated_at
+    %span.user= @user.attributes.name
