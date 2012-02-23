@@ -9,6 +9,14 @@ class Pat.Views.Concerns.CommentsListView extends Backbone.View
   addAll: () =>
     @options.comments.each(@addOne)
     @$('abbr.timeago').timeago()
+    @fixUsers()
+
+  # replace each id hash with a user name
+  fixUsers: ->
+    @$('.user-id').each (user,a) ->
+      id = $(this).text()
+      user = Users.get(id) || {attributes:{name:'Someone'}}
+      $(this).text(user.attributes.name)
 
   addOne: (comment) =>
     view = new Pat.Views.Concerns.CommentView(model: comment)

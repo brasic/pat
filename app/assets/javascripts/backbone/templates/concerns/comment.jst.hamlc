@@ -3,4 +3,4 @@
   .comment-metadata
     %span.when-updated
       %abbr.timeago{title:"#{@updated_at}"}= @updated_at
-    %span.user= @user.attributes.name
+    %span.user-id= @updater_id

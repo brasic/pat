@@ -4,11 +4,19 @@ class Pat.Views.Concerns.ConcernView extends Backbone.View
   template: JST["backbone/templates/concerns/concern"]
 
   events:
-    "click .destroy" : "destroy"
+    "click .destroy" : "ask_to_destroy"
 
   tagName: "tr"
 
-  destroy: () ->
+  ask_to_destroy: (event) ->
+    event.preventDefault()
+    modal = new Pat.Views.ModalView(
+      callback:@destroy
+      text:"Delete #{@model.attributes.title}?"
+    )
+    $(modal.render().el).modal()
+
+  destroy: () =>
     @model.destroy()
     this.remove()
 

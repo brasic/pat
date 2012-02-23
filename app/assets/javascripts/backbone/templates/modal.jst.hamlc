@@ -1,0 +1,9 @@
+#myModal.modal
+  .modal-header
+    %a.close{"data-dismiss" => "modal"} &times;
+    %h3= @header
+  .modal-body
+    %p= @text
+  .modal-footer
+    %a.btn.btn-primary.yes{"data-dismiss"=> "modal",:href => "#"} Yes
+    %a.btn.no{"data-dismiss"=> "modal", :href => "#"} No

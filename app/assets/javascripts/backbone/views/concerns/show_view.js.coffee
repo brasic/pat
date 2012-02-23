@@ -13,8 +13,6 @@ class Pat.Views.Concerns.ShowView extends Backbone.View
     _this=this
     @$('.markdown').each ->
       raw = $(this).text()
-      console.log raw
-      console.log marker(raw)
       _this.$(this).html(marker(raw))
 
     this
