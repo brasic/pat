@@ -1,34 +1,35 @@
 ul.comments{
   list-style-type: none;
-}
-
-li .comment-text{
-  background-color:whiteSmoke;
-  margin:9px;
-  padding:10px;
-  padding-top:15px;
-}
-
-li .comment-metadata{
-  float:right;
-  margin-bottom:1em;
-  margin-right:20px;
+  li{
+    .comment{
+      margin:9px;
+      padding:10px;
+      padding-top:15px;
+    }
+    .comment-text{
+      background-color:whiteSmoke;
+      margin-bottom:8px;
+    }
+    .comment-metadata{
+      float:right;
+      margin-bottom:1em;
+      margin-right:20px;
+    }
+  }
 }
 
 .comment-edit{
-  margin-left:34px;
+  margin-left:25px;
   width:30%;
   margin-bottom:3em;
-}
-
-.comment-edit textarea{
-  width:100%;
-}
-
-.comment-edit button{
-  display:block;
-  float:right;
-  margin-right:-9px;
+  textarea{
+    width:100%;
+  }
+  button{
+    display:block;
+    float:right;
+    margin-right:-9px;
+  }
 }
 
 .new-comment{
