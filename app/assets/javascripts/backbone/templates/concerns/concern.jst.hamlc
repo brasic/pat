@@ -1,7 +1,8 @@
 %td= @title
 %td
   .user-id= @creator_id
-%td= @status
+%td
+  %span.label.status{class: "#{@status}" }= @status
 %td
   %a{:href => "#/#{@id}"} Show
   |

@@ -29,11 +29,16 @@ class Pat.Views.Concerns.FormView extends Backbone.View
     error: (concern, jqXHR) =>
       model.set({errors: $.parseJSON(jqXHR.responseText)})
       scroll_to_top()
+  
+  # add the 'checked' attribute in the form for whatever of the options is checked in the model 
+  mark_checked: ->
+    status=@model.attributes.status
+    @$("input[type=radio][value=#{status}]").attr('checked','true')
 
   render: ->
-
     # @template will be defined by child classes.
     $(@el).html(@template(this))
+    @mark_checked()
     @$('.markdown').markItUp(myMarkdownSettings)
     this.$("form").backboneLink(@model)
 

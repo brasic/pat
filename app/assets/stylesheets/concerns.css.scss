@@ -5,3 +5,17 @@
 abbr{
   text-transform:none;
 }
+
+h1 .status{
+  float:right;
+  line-height:15px;
+  font-size:50%;
+}
+
+span.status.Closed {
+   background-color: #468847;
+}
+
+span.status.Open {
+   background-color: #F89406;
+}

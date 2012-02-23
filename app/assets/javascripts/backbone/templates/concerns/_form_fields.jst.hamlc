@@ -17,8 +17,11 @@
       %span.help-inline= @errors.content
 
 .control-group
-  %label.control-label{:for=>"title"} Status:
+  %label.control-label{for:"status"} Status:
   .controls
-    .btn-group{'data-toggle'=>'buttons-radio'}
-      %button.btn.btn-primary Open
-      %button.btn.btn-primary Closed
+    %label.radio
+      %input{type:'radio',name:'status',value:'Open'}
+      Open
+    %label.radio
+      %input{type:'radio',name:'status',value:'Closed'}
+      Closed
