@@ -3,8 +3,9 @@ class Pat.Models.Concern extends Backbone.Model
 
   defaults:
     title: null
-    content: null
+    content: "Enter your description here..."
     comments: null
+    status: "Open"
 
 class Pat.Collections.ConcernsCollection extends Backbone.Collection
   model: Pat.Models.Concern
