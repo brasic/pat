@@ -1,6 +1,5 @@
 %li.comment.span8
-  .comment-text.well
-    = @text
+  .comment-text.well.markdown= @text
   .comment-metadata
     %span.when-updated
       %abbr.timeago{title:"#{@updated_at}"}= @updated_at

@@ -1,3 +1,4 @@
 %h3 Comments
 .row
   %ul.comments
+.new-comment{role:'button'} Add a Comment...

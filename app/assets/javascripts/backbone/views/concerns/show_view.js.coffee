@@ -10,7 +10,11 @@ class Pat.Views.Concerns.ShowView extends Backbone.View
   render: ->
     $(@el).html(@template(@model.toJSON() ))
     @append_comments()
-    raw_md = @$('.markdown').text()
-    @$('.markdown').html(marker(raw_md))
+    _this=this
+    @$('.markdown').each ->
+      raw = $(this).text()
+      console.log raw
+      console.log marker(raw)
+      _this.$(this).html(marker(raw))
 
     this
