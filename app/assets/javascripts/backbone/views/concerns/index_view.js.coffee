@@ -8,6 +8,13 @@ class Pat.Views.Concerns.IndexView extends Backbone.View
 
   addAll: () =>
     @options.concerns.each(@addOne)
+    @fixUsers()
+
+  # replace each id hash with a user name
+  fixUsers: ->
+    @$('.user-id').each (user,a) ->
+      id = $(this).text()
+      $(this).text(Users.get(id).attributes.name)
 
   addOne: (concern) =>
     view = new Pat.Views.Concerns.ConcernView({model : concern})

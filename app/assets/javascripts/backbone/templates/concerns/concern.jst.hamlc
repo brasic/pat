@@ -1,5 +1,7 @@
 %td= @title
-%td= @content
+%td
+  .user-id= @creator_id
+%td= @status
 %td
   %a{:href => "#/#{@id}"} Show
   |

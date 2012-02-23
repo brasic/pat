@@ -3,7 +3,8 @@
 %table#concerns-table.table.table-bordered.table-striped
   %tr
     %th Title
-    %th Content
+    %th Creator
+    %th Status
     %th Actions
 
 %br

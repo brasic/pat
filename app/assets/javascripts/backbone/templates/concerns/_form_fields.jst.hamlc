@@ -15,3 +15,10 @@
       = @content
     - if c
       %span.help-inline= @errors.content
+
+.control-group
+  %label.control-label{:for=>"title"} Status:
+  .controls
+    .btn-group{'data-toggle'=>'buttons-radio'}
+      %button.btn.btn-primary Open
+      %button.btn.btn-primary Closed
