@@ -15,6 +15,8 @@
       = @content
     - if c
       %span.help-inline= @errors.content
+    .help-block
+      %a{href:'http://en.wikipedia.org/wiki/Markdown#Syntax_examples',target:'_'} Markdown Guide
 
 .control-group
   %label.control-label{for:"status"} Status:
