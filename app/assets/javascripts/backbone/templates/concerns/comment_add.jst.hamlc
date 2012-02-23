@@ -1,5 +1,5 @@
 .comment-edit
-  %textarea.comment-text{rows:3,cols:30}
-  %button.btn.btn-primary{type:'submit'}
+  %textarea.new-comment-text{rows:3,cols:30}
+  %button.btn.btn-primary.submit-comment{type:'submit'}
     %i.icon-comment.icon-white
     Submit

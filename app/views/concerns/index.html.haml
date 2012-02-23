@@ -1,10 +1,11 @@
 :javascript
   $(function() {
     console.log('starting...');
+    window.currentUser = "#{@users.first.id}";
     window.app = new Pat.Routers.ConcernsRouter(
       {
-        concerns: #{@concerns.to_json.html_safe},
-        users:    #{@users.to_json.html_safe}
+        concerns:    #{@concerns.to_json.html_safe},
+        users:       #{@users.to_json.html_safe}
       });
     Backbone.history.start();
   });
