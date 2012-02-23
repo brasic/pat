@@ -3,19 +3,17 @@ Pat.Views.Concerns ||= {}
 class Pat.Views.Concerns.ShowView extends Backbone.View
   template: JST["backbone/templates/concerns/show"]
 
+  initialize: ->
+    @bind 'time_to_save', @save_new_comment
+
   events:
     "click .new-comment"    : "open_comment_box"
-    "click .submit-comment" : "save_new_comment"
 
   open_comment_box: ->
-    comment = new Pat.Views.Concerns.CommentAddView(comments:@model.attributes.comments)
+    comment = new Pat.Views.Concerns.CommentAddView(show_view:this)
     @$("#new-comment").html(comment.render().el)
 
-  save_new_comment: (e) ->
-    console.log 'saving in show-view'
-    e.preventDefault()
-    e.stopPropagation()
-
+  save_new_comment: ->
     @model.unset("errors")
     @model.save()
     @render()
