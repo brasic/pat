@@ -23,36 +23,6 @@ span.status.Open {
 span.status.Blocked {
    background-color: #953B39;
 }
-
-ul.comments{
-  list-style-type: none;
-}
-
-li .comment-text{
-  background-color:whiteSmoke;
-  margin:9px;
-  padding:10px;
-  padding-top:15px;
-}
-
-li .comment-metadata{
-  float:right;
-  margin-bottom:1em;
-}
-
-.new-comment{
-  display:inline-block;
-  -webkit-box-sizing: border-box;
-  -moz-box-sizing: border-box;
-  box-sizing: border-box;
-  border: 1px solid #DDD;
-  color: #999;
-  cursor: text;
-  padding: 4px 7px;
-  margin: 0px 0px 20px 33px;
-  width: 35%;
-}
-
 th.actions{
   width:241px;
 }
