@@ -1,13 +1,6 @@
-class User
-  include MongoMapper::Document
+class User < ActiveResource::Base
 
-  key :username
-  key :name
-  key :email
+  self.site = "http://ls/"
+  self.element_name = "webuser"
 
-  timestamps!
-
-  validates_presence_of :username
-  validates_presence_of :name
-  validates_presence_of :email
 end
