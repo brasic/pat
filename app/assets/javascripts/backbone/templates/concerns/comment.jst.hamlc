@@ -4,5 +4,5 @@
   .comment-text.well.markdown= @text
   .comment-metadata
     %span.when-updated
-      %abbr.timeago{title:"#{@updated_at}"}= @updated_at
+      %abbr.timeago{title:"#{@updated_at}"}= @created_at
     %span.user-id= @updater_id

@@ -10,14 +10,13 @@ class Pat.Views.Concerns.CommentAddView extends Backbone.View
     @comments = @options.show_view.model.attributes.comments
 
   add_comment_to_collection: ->
-    window.ooo=@options.comments
     new_text=@$('.new-comment-text').val()
-    window.fff=new_text
     if new_text
+      newComment=new Pat.Models.Comment(text:new_text,id:ObjectId())
       @comments.push(
-        new Pat.Models.Comment(text:new_text).attributes
+        newComment.attributes
       )
-      @options.show_view.trigger "time_to_save"
+      @options.show_view.trigger "time_to_save",newComment
     else
       console.log 'empty comment!'
       #@trigger "throw alert"

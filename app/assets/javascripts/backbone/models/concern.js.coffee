@@ -1,6 +1,12 @@
 class Pat.Models.Concern extends Backbone.Model
   paramRoot: 'concern'
 
+  includeComments: (commentsCollection) ->
+    commentsCollection.bind('change', @onCommentsChange, this)
+
+  onCommentsChange: (commentsCollection) ->
+    console.log 'concern saw the comments change'
+
   defaults:
     title: null
     content: "Enter your description here..."

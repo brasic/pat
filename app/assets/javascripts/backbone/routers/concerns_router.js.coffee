@@ -39,10 +39,7 @@ class Pat.Routers.ConcernsRouter extends Backbone.Router
 
   show: (id) ->
     concern = @concerns.get(id)
-    comments = new Pat.Collections.CommentsCollection()
-    comments.reset concern.attributes.comments
-
-    @view = new Pat.Views.Concerns.ShowView(model: concern, comments: comments)
+    @view = new Pat.Views.Concerns.ShowView(model: concern)
     $("#concerns").html(@view.render().el)
 
   edit: (id) ->
