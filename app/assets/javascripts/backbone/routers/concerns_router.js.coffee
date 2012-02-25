@@ -3,6 +3,11 @@ class Pat.Routers.ConcernsRouter extends Backbone.Router
   initialize: (options) ->
 
     # Create and populate the list of concerns (our main collection)
+    @session = new Pat.Models.Session()
+    if @session.authenticated()
+      console.log 'authed'
+    else
+      console.log 'notauthed'
     @concerns = new Pat.Collections.ConcernsCollection()
     @concerns.reset options.concerns
 

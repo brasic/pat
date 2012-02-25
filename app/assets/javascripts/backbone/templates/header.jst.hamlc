@@ -16,7 +16,7 @@
               %input#searchText.search-query.dropdown-toggle{:placeholder => "Search", :type => "text"}
           %li.dropdown
             %a.dropdown-toggle{'data-toggle'=>'dropdown',href:'#'}
-              Logged in as Someone
+              ="Logged in as #{Session.user()?.name || 'nobody' }"
               %b.caret
             %ul.dropdown-menu
               %li
@@ -27,4 +27,5 @@
                 %a sdofsk skdf sdf
               %li.divider
               %li 
-                %a sdofsk skdf sdf
+                %a.logout{href:''} Logout
+#alerts

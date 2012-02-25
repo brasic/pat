@@ -1,5 +1,6 @@
 Pat::Application.routes.draw do
   resources :users
+  match 'login' => 'users#login'
 
   resources :concerns
   root to: 'concerns#index'

@@ -10,6 +10,22 @@ class UsersController < ApplicationController
     end
   end
 
+  def login
+
+    # make a call to the login server with the user's credentials
+    if (@response=User.login(params[:username],params[:password])).code == '201'
+
+      # login was successful, so set the cookie in the ajax response
+      cookies[:pat_user_id] = { 
+        value:   JSON.parse(@response.body)['id'],
+        expires: Time.now + 3600
+      }
+    end
+
+    # proxy the login server's response to the client
+    render json: @response.body, response: @response.code
+  end
+
   # GET /users/1
   # GET /users/1.json
   def show

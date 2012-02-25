@@ -2,11 +2,13 @@ class Pat.Views.HeaderView extends Backbone.View
   template: JST["backbone/templates/header"]
 
   initialize: ->
+    window.Header = this
     # @searchResults = new ConcernCollection()
     # @searchresultsView = new ConcernListView(
     #   model: @searchResults
     #   className: "dropdown-menu"
     # )
+  
 
   render: (eventName) ->
     $(@el).html @template()
