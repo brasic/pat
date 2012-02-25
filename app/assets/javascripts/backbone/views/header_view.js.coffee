@@ -10,6 +10,7 @@ class Pat.Views.HeaderView extends Backbone.View
 
   render: (eventName) ->
     $(@el).html @template()
+    @$('.dropdown-toggle').dropdown()
     # $(".navbar-search", @el).append @searchresultsView.render().el
     this
 

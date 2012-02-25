@@ -8,9 +8,23 @@
       %a.brand{:href => "#"} Pat
       .nav-collapse
         %ul.nav
-          %li#nav-home
-            %a{:href => "#"} Home
           %li#nav-index
             %a{:href => "#/index"} Concerns
-        %form#searchForm.navbar-search.pull-right.dropdown
-          %input#searchText.search-query.dropdown-toggle{:placeholder => "Search", :type => "text"}
+        %ul.nav.pull-right
+          %li.dropdown
+            %form#searchForm.navbar-search
+              %input#searchText.search-query.dropdown-toggle{:placeholder => "Search", :type => "text"}
+          %li.dropdown
+            %a.dropdown-toggle{'data-toggle'=>'dropdown',href:'#'}
+              Logged in as Someone
+              %b.caret
+            %ul.dropdown-menu
+              %li
+                %a sdofhsdkjfhsd
+              %li
+                %a sdo4234
+              %li 
+                %a sdofsk skdf sdf
+              %li.divider
+              %li 
+                %a sdofsk skdf sdf
