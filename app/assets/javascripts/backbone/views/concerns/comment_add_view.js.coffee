@@ -23,5 +23,6 @@ class Pat.Views.Concerns.CommentAddView extends Backbone.View
 
   render: ->
     $(@el).html(@template())
+    # TODO needs second click for focus
     this
 
