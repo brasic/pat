@@ -1,0 +1,13 @@
+%li
+  %a{href:'http://ls',target:'_blank'} Use your LS credentials.
+%li.divider
+%li
+  %form.js-signin.signin{:action => "https://twitter.com/sessions?phx=1", :method => "post"}
+    %fieldset.textbox.js-signin-fields
+      %label.username
+        %span Username
+        %input#js-username{:autocomplete => "on", :type => "text"}
+      %label.password
+        %span Password
+        %input#js-password{:name => "password", :type => "password"}
+      %button.btn.btn-primary.submit{:type => "submit"} Sign in

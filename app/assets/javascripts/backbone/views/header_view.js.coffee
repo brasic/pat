@@ -3,6 +3,8 @@ class Pat.Views.HeaderView extends Backbone.View
 
   initialize: ->
     window.Header = this
+    @login=new Pat.Views.LoginView()
+
     # @searchResults = new ConcernCollection()
     # @searchresultsView = new ConcernListView(
     #   model: @searchResults
@@ -12,8 +14,9 @@ class Pat.Views.HeaderView extends Backbone.View
 
   render: (eventName) ->
     $(@el).html @template()
+    @$('#session-dropdown').html(@login.render().el)
     @$('.dropdown-toggle').dropdown()
-    # $(".navbar-search", @el).append @searchresultsView.render().el
+
     this
 
   events:

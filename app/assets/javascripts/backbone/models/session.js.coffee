@@ -26,6 +26,7 @@ class Pat.Models.Session extends Backbone.Model
     Header.render()
 
   login: (credentials) ->
+    # TODO if the login comes back ok, make sure it's in the UsersCollection
     $.ajax(
       url: "/login.json",
       data: credentials

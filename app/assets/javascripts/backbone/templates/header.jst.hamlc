@@ -14,11 +14,11 @@
           %li.dropdown
             %form#searchForm.navbar-search
               %input#searchText.search-query.dropdown-toggle{:placeholder => "Search", :type => "text"}
-          %li.dropdown
+          %li.dropdown.session-container
             %a.dropdown-toggle{'data-toggle'=>'dropdown',href:'#'}
               ="Logged in as #{Session.user()?.name || 'nobody' }"
               %b.caret
-            %ul.dropdown-menu
+            %ul.dropdown-menu#session-dropdown
               %li
                 %a sdofhsdkjfhsd
               %li
@@ -28,4 +28,3 @@
               %li.divider
               %li 
                 %a.logout{href:''} Logout
-#alerts

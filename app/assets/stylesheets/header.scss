@@ -1,3 +1,27 @@
 .login_area{
   position:relative;
 }
+
+.js-signin{
+  width:18em;
+  padding:1em;
+}
+
+fieldset.js-signin-fields label input{
+  width:182px;
+}
+
+#alerts {
+  margin: 1em;
+  float: right;
+  margin-bottom: -13px;
+  top: 2px;
+  position: absolute;
+  width: 50%;
+  z-index: 9999;
+  left: 23%;
+}
+
+.alert p{
+  font-size:167%;
+}
