@@ -4,7 +4,6 @@ class Pat.Views.HeaderView extends Backbone.View
   initialize: ->
     window.Header = this
     @login=new Pat.Views.LoginView()
-    @bind 'needs_login', @open_login_box
 
     # @searchResults = new ConcernCollection()
     # @searchresultsView = new ConcernListView(
@@ -12,7 +11,8 @@ class Pat.Views.HeaderView extends Backbone.View
     #   className: "dropdown-menu"
     # )
   
-  open_login_box: (e) ->
+  open_login_box: (e,callback) ->
+    @login.current_callback=callback
     $('.session-container').addClass('open')
     e.stopPropagation() if e?
 

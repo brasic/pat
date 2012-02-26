@@ -25,17 +25,20 @@ class Pat.Models.Session extends Backbone.Model
     $.cookie('pat_user_id', null)
     Header.render()
 
-  login: (credentials) ->
+  login: (options) ->
     # TODO if the login comes back ok, make sure it's in the UsersCollection
     $.ajax(
       url: "/login.json",
-      data: credentials
+      data: options.credentials
       success: (data) ->
         console.log 'success'
         Header.render()
         console.log $.parseJSON(data.responseText)
+        options.success(data)
       error: (data) ->
         console.log 'error'
         console.log $.parseJSON(data.responseText)
+        options.success()
+        options.error()
     )
 

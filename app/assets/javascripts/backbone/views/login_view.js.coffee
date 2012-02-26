@@ -23,10 +23,17 @@ class Pat.Views.LoginView extends Backbone.View
       e.preventDefault()
       e.stopPropagation()
 
-  submit: (e) ->
+  submit: (e) =>
     res=Session.login
-      username: @$('#js-username').val()
-      password: @$('#js-password').val()
+      credentials:
+        username: @$('#js-username').val()
+        password: @$('#js-password').val()
+      success : (x) =>
+        console.log x
+        @current_callback() if @current_callback?
+        @current_callback=null
+      failure: ->
+        console.log 'some problem logging in'
 
   render: ->
     # template to render depends on the login status

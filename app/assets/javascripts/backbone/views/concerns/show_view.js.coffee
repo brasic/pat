@@ -16,7 +16,12 @@ class Pat.Views.Concerns.ShowView extends Backbone.View
       comment = new Pat.Views.Concerns.CommentAddView(show_view:this)
       @$("#new-comment").html(comment.render().el)
     else
-      Header.open_login_box(e)
+      Header.open_login_box(e, =>
+        # callback to be executed once the login is done
+        comment = new Pat.Views.Concerns.CommentAddView(show_view:this)
+        @$("#new-comment").html(comment.render().el)
+      )
+
 
   save_new_comment: (comment) ->
     @model.unset("errors")
