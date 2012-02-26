@@ -55,6 +55,7 @@ class Pat.Routers.ConcernsRouter extends Backbone.Router
 
   make_header: ->
     @headerView = new Pat.Views.HeaderView()
+    window.Alerts = new Pat.Views.AlertView()
 
     $(".header").html @headerView.render().el
     $("body").click ->
