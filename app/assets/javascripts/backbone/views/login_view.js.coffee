@@ -1,6 +1,9 @@
 class Pat.Views.LoginView extends Backbone.View
   template: JST["backbone/templates/login"]
 
+  initialize: ->
+    @current_callback = null
+
   events:
     "click"               : "prevent"
     "click button.submit" : "submit"
@@ -25,8 +28,8 @@ class Pat.Views.LoginView extends Backbone.View
     console.log password
     console.log 'submit'
     Session.login
-      username:'brasic'
-      password:'Tqbf42!!'
+      username: username
+      password: password
 
   render: ->
     $(@el).html @template(@options)
