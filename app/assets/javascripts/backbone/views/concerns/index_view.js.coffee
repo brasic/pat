@@ -3,8 +3,22 @@ Pat.Views.Concerns ||= {}
 class Pat.Views.Concerns.IndexView extends Backbone.View
   template: JST["backbone/templates/concerns/index"]
 
+  events:
+    "click .auth-required" : "check_login_status"
+
   initialize: () ->
     @options.concerns.bind('reset', @addAll)
+
+  check_login_status: (e) ->
+    window.yyy=e
+    unless Session.authenticated()
+      e.stopPropagation()
+      e.preventDefault()
+      Header.open_login_box(e, =>
+        # callback to follow the link upon successful login
+        window.location=e.target.href
+      )
+
 
   addAll: () =>
     @options.concerns.each(@addOne)

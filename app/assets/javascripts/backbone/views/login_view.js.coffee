@@ -1,7 +1,7 @@
 class Pat.Views.LoginView extends Backbone.View
   templates:
     false:  JST["backbone/templates/login"]
-    true:  _.template "<li><a class='logout'>Log out</a></li>"
+    true:  _.template "<li><a href='javascript:Session.destroy()' class='logout'>Log out</a></li>"
 
   initialize: ->
     @current_callback = null
@@ -17,7 +17,7 @@ class Pat.Views.LoginView extends Backbone.View
   # stop the normal behavior of getting rid of the menu on click
   # TODO after the login, the handlers go away.  why? 
   prevent: (e) ->
-
+    console.log 'prevent'
     # only allow links through
     unless e.target.href?
       e.preventDefault()
@@ -31,7 +31,7 @@ class Pat.Views.LoginView extends Backbone.View
       success : (x) =>
         console.log x
         @current_callback() if @current_callback?
-        @current_callback=null
+        @initialize()
       failure: ->
         console.log 'some problem logging in'
 

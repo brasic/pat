@@ -8,9 +8,9 @@
     %a.btn{:href => "#/#{@id}"}
       %i.icon-share-alt
       Show
-    %a.btn{:href => "#/#{@id}/edit"}
+    %a.btn.auth-required{:href => "#/#{@id}/edit"}
       %i.icon-pencil
       Edit
-    %a.btn.destroy{:href => "#/#{@id}/destroy"}
+    %a.btn.auth-required.destroy{:href => "#/#{@id}/destroy"}
       %i.icon-trash
       Delete

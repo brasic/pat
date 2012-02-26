@@ -9,6 +9,6 @@
 
 %br
 
-%a.btn.btn-primary{:href=>"#/new"}
+%a#new-concern.btn.btn-primary.auth-required{:href=>"#/new"}
   %i.icon-file.icon-white
   New Concern

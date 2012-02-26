@@ -14,9 +14,11 @@ class Pat.Views.HeaderView extends Backbone.View
   open_login_box: (e,callback) ->
     @login.current_callback=callback
     $('.session-container').addClass('open')
+    $('#session-dropdown').effect('highlight',1500)
     e.stopPropagation() if e?
 
   render: (eventName) ->
+    console.log 'rendering'
     $(@el).html @template(login:@login_status())
     @$('#session-dropdown').html(@login.render().el)
     @$('.dropdown-toggle').dropdown()
