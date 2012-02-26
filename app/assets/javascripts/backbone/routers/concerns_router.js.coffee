@@ -58,5 +58,3 @@ class Pat.Routers.ConcernsRouter extends Backbone.Router
     window.Alerts = new Pat.Views.AlertView()
 
     $(".header").html @headerView.render().el
-    $("body").click ->
-      $(".dropdown").removeClass "open"

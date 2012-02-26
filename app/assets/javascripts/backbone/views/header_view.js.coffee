@@ -4,6 +4,7 @@ class Pat.Views.HeaderView extends Backbone.View
   initialize: ->
     window.Header = this
     @login=new Pat.Views.LoginView()
+    @bind 'needs_login', @open_login_box
 
     # @searchResults = new ConcernCollection()
     # @searchresultsView = new ConcernListView(
@@ -11,20 +12,28 @@ class Pat.Views.HeaderView extends Backbone.View
     #   className: "dropdown-menu"
     # )
   
+  open_login_box: (e) ->
+    $('.session-container').addClass('open')
+    e.stopPropagation() if e?
 
   render: (eventName) ->
-    $(@el).html @template()
+    $(@el).html @template(login:@login_status())
     @$('#session-dropdown').html(@login.render().el)
     @$('.dropdown-toggle').dropdown()
 
     this
+
+  login_status: ->
+    if Session.authenticated()
+      Session.user().name
+    else
+      "Log in"
 
   events:
     "keyup .search-query": "search"
     "click .nav li"      : "press_nav_button"
 
   search: (event) ->
-    console.log 'search time'
     # key = $("#searchText").val()
     # console.log "search " + key
     # @searchResults.findByName key

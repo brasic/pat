@@ -16,7 +16,7 @@
               %input#searchText.search-query.dropdown-toggle{:placeholder => "Search", :type => "text"}
           %li.dropdown.session-container
             %a.dropdown-toggle{'data-toggle'=>'dropdown',href:'#'}
-              ="Logged in as #{Session.user()?.name || 'nobody' }"
+              =@login
               %b.caret
             %ul.dropdown-menu#session-dropdown
               %li

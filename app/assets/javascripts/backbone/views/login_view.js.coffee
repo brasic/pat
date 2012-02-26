@@ -1,5 +1,7 @@
 class Pat.Views.LoginView extends Backbone.View
-  template: JST["backbone/templates/login"]
+  templates:
+    false:  JST["backbone/templates/login"]
+    true:  _.template "<li><a class='logout'>Log out</a></li>"
 
   initialize: ->
     @current_callback = null
@@ -7,30 +9,27 @@ class Pat.Views.LoginView extends Backbone.View
   events:
     "click"               : "prevent"
     "click button.submit" : "submit"
+    "click .logout"       : "logout"
+
+  logout: ->
+    Session.destroy()
 
   # stop the normal behavior of getting rid of the menu on click
   # TODO after the login, the handlers go away.  why? 
   prevent: (e) ->
-    console.log 'prevent'
-    window.aaa=e.target.href
-    console.log e.target.href == undefined
 
     # only allow links through
     unless e.target.href?
-      console.log 'sdf'
       e.preventDefault()
       e.stopPropagation()
 
   submit: (e) ->
-    username = @$('#js-username').val()
-    password = @$('#js-password').val()
-    console.log username
-    console.log password
-    console.log 'submit'
-    Session.login
-      username: username
-      password: password
+    res=Session.login
+      username: @$('#js-username').val()
+      password: @$('#js-password').val()
 
   render: ->
-    $(@el).html @template(@options)
+    # template to render depends on the login status
+    tpl=@templates[Session.authenticated()]
+    $(@el).html tpl(@options)
     this

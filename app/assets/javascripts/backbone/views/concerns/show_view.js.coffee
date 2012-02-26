@@ -11,9 +11,12 @@ class Pat.Views.Concerns.ShowView extends Backbone.View
   events:
     "click .new-comment"    : "open_comment_box"
 
-  open_comment_box: ->
-    comment = new Pat.Views.Concerns.CommentAddView(show_view:this)
-    @$("#new-comment").html(comment.render().el)
+  open_comment_box: (e) ->
+    if Session.authenticated()
+      comment = new Pat.Views.Concerns.CommentAddView(show_view:this)
+      @$("#new-comment").html(comment.render().el)
+    else
+      Header.open_login_box(e)
 
   save_new_comment: (comment) ->
     @model.unset("errors")
