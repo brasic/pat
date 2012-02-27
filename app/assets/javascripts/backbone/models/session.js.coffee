@@ -23,7 +23,6 @@ class Pat.Models.Session extends Backbone.Model
   # Logs the user out
   destroy: ->
     $.cookie('pat_user_id', null)
-    Header.render()
 
   login: (options) ->
     # TODO if the login comes back ok, make sure it's in the UsersCollection

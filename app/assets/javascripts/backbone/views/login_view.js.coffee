@@ -6,13 +6,9 @@ class Pat.Views.LoginView extends Backbone.View
   initialize: ->
     @current_callback = null
 
-  events:
-    "click"               : "prevent"
-    "click button.submit" : "submit"
-    "click .logout"       : "logout"
-
   logout: (e) ->
     Session.destroy()
+    Header.render()
     false
 
   # stop the normal behavior of getting rid of the menu on click
@@ -63,4 +59,9 @@ class Pat.Views.LoginView extends Backbone.View
     # template to render depends on the login status
     tpl=@templates[Session.authenticated()]
     $(@el).html tpl(@options)
+
+    $(@el).click( @prevent )
+    @$(".js-signin-fields button.submit").click( @submit )
+    @$(".logout").click( @logout )
+
     this

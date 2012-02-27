@@ -23,7 +23,6 @@ class Pat.Views.HeaderView extends Backbone.View
     e.stopPropagation() if e?
 
   render: (eventName) ->
-    console.log 'rendering'
     $(@el).html @template(login:@login_status())
     $('.navbar-search', this.el).append(@searchresultsView.render().el)
     @$('#session-dropdown').html(@login.render().el)
