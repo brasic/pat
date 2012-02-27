@@ -5,14 +5,14 @@
         %span.icon-bar
         %span.icon-bar
         %span.icon-bar
-      %a.brand{:href => "#"} Pat
+      %a.brand Action Tracker
       .nav-collapse
         %ul.nav
           %li#nav-index
             %a{:href => "#/index"} Concerns
         %ul.nav
           %li
-            %a{:href => "http://ls"} LS
+            %a{:href => "http://ls",target: '_blank'} LS
         %ul.nav.pull-right
           %li.dropdown#search-dropdown
             %form#searchForm.navbar-search

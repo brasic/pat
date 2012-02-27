@@ -20,7 +20,7 @@ class Pat.Routers.ConcernsRouter extends Backbone.Router
     window.marker = new Showdown.converter().makeHtml
 
   routes:
-    ""          : "home"
+    ""          : "index"
     "/new"      : "newConcern"
     "/index"    : "index"
     "/:id/edit" : "edit"
