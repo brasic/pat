@@ -4,6 +4,6 @@
   = @_form_fields(@model.attributes)
 
   .form-actions
-    %button.btn.btn-primary{:type=>"submit"}
+    %button.auth-required.btn.btn-primary{:type=>"submit"}
       %i.icon-ok.icon-white
       Save

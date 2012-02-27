@@ -7,6 +7,7 @@ class Pat.Views.Concerns.NewView extends Pat.Views.Concerns.FormView
 
   events:
     "submit #new-concern": "save"
+    "click .auth-required" : "check_login_status"
 
   save: (e) ->
     @model.unset("errors")
