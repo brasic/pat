@@ -7,3 +7,6 @@
     %button.auth-required.btn.btn-primary{:type=>"submit"}
       %i.icon-ok.icon-white
       Save
+    %a.btn{:href => "javascript:history.back()"}
+      %i.icon-remove
+      Back

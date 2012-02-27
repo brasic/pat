@@ -2,7 +2,3 @@
 
 %form#edit-concern.form-horizontal{:name=>"concern"}
   = @_form(this)
-
-%a.btn{:href => "#/index"}
-  %i.icon-home
-  Back
