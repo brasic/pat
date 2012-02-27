@@ -8,11 +8,14 @@ class Pat.Views.Concerns.SearchView extends Backbone.View
     @model.bind "add", (item) ->
       $(self.el).append new Pat.Views.Concerns.SearchItemView(model: item).render().el
 
-  render: (eventName) ->
+  render: ->
     $(@el).empty()
-    _.each @model.models, ((item) ->
-      $(@el).append new Pat.Views.Concerns.SearchItemView(model: item).render().el
-    ), this
+    if @model.models.length == 0
+      $(@el).append "<li class='empty-results'>No results.</li>"
+    else
+      _.each @model.models, ((item) ->
+        $(@el).append new Pat.Views.Concerns.SearchItemView(model: item).render().el
+      ), this
     this
 
 class Pat.Views.Concerns.SearchItemView extends Backbone.View

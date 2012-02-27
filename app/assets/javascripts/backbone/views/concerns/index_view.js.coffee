@@ -21,7 +21,6 @@ class Pat.Views.Concerns.IndexView extends Backbone.View
     @$(".#{toggleName}-row").toggle('slow')
 
   addAll: () =>
-    console.log 'asdfff'
     @options.concerns.each(@addOne)
     @fixUsers()
     @$('.timeago').timeago()
