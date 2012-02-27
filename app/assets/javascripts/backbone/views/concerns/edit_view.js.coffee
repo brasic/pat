@@ -9,8 +9,6 @@ class Pat.Views.Concerns.EditView extends Pat.Views.Concerns.FormView
     "submit #edit-concern" : "update"
 
   update: (e) ->
-    e.preventDefault()
-    e.stopPropagation()
-
     @model.unset("errors")
     @model.save(null,@response_handlers(@model))
+    false

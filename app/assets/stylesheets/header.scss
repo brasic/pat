@@ -25,3 +25,8 @@ fieldset.js-signin-fields label input{
 .alert p{
   font-size:167%;
 }
+
+#login-message{
+  text-overflow:ellipsis;
+  overflow:hidden;
+}

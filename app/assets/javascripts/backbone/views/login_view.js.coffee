@@ -20,18 +20,23 @@ class Pat.Views.LoginView extends Backbone.View
     console.log 'prevent'
     # only allow links through
     unless e.target.href?
-      e.preventDefault()
-      e.stopPropagation()
+      false
 
   submit: (e) =>
     res=Session.login
       credentials:
         username: @$('#js-username').val()
         password: @$('#js-password').val()
-      success : (x) =>
-        console.log x
-        @current_callback() if @current_callback?
-        @initialize()
+      success : (data) =>
+        if data.error
+          e.preventDefault()
+          e.stopPropagation()
+          @$('.submit').addClass('btn-danger')
+          @$('#login-message').text(data.error)
+          $(@el).parent().effect('highlight',{color:'red'},1000)
+        else
+          @current_callback() if @current_callback?
+          Header.render()
       failure: ->
         console.log 'some problem logging in'
 

@@ -11,6 +11,6 @@
 %a.btn{:href => "#/index"}
   %i.icon-home
   Back
-%a.btn{:href => "#/#{@id}/edit"}
+%a.btn.auth-required{:href => "#/#{@id}/edit"}
   %i.icon-pencil
   Edit

@@ -9,17 +9,6 @@ class Pat.Views.Concerns.IndexView extends Backbone.View
   initialize: () ->
     @options.concerns.bind('reset', @addAll)
 
-  check_login_status: (e) ->
-    window.yyy=e
-    unless Session.authenticated()
-      e.stopPropagation()
-      e.preventDefault()
-      Header.open_login_box(e, =>
-        # callback to follow the link upon successful login
-        window.location=e.target.href
-      )
-
-
   addAll: () =>
     @options.concerns.each(@addOne)
     @fixUsers()

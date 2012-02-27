@@ -1,5 +1,5 @@
 %li
-  %a{href:'http://ls',target:'_blank'} Use your LS credentials.
+  %a#login-message{href:'http://ls',target:'_blank'} Use your LS credentials.
 %li.divider
 %li
   %form.js-signin.signin

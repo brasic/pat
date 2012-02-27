@@ -31,14 +31,9 @@ class Pat.Models.Session extends Backbone.Model
       url: "/login.json",
       data: options.credentials
       success: (data) ->
-        console.log 'success'
-        Header.render()
-        console.log $.parseJSON(data.responseText)
+        # Execute the callback fn for success
         options.success(data)
       error: (data) ->
-        console.log 'error'
-        console.log $.parseJSON(data.responseText)
-        options.success()
-        options.error()
+        options.error(data)
     )
 
