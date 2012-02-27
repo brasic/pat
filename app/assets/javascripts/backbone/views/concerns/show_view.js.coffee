@@ -34,8 +34,16 @@ class Pat.Views.Concerns.ShowView extends Backbone.View
     @list ||= new Pat.Views.Concerns.CommentsListView(comments: @comments)
     @$("#comments-list").html(@list.render().el)
 
+  fixUsers: ->
+    @$('.user-id').each (user,a) ->
+      id = $(this).text()
+      user = Users.get(id) || {attributes:{name:'Someone'}}
+      $(this).text(user.attributes.name)
+
   render: ->
     $(@el).html(@template(@model.toJSON() ))
+    @$('abbr.timeago').timeago()
+    @fixUsers()
     @append_comments()
     _this=this
     @$('.markdown').each ->

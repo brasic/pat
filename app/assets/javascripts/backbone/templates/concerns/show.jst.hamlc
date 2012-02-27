@@ -2,7 +2,13 @@
   = @title
   %span.label.status{class: "#{@status}" }
     = @status
-    Since sometime ago
+
+.when-updated
+  Updated
+  %abbr.timeago{title:"#{@updated_at}"}= @updated_at
+  by
+  .user-id= @updater_id || "2"
+
 %p.well.markdown
   = @content
 
