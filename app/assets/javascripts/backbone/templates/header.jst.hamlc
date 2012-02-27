@@ -2,9 +2,6 @@
   .navbar-inner
     .container
       %a.btn.btn-navbar{"data-target" => ".nav-collapse", "data-toggle" => "collapse"}
-        %span.icon-bar
-        %span.icon-bar
-        %span.icon-bar
       %a.brand Action Tracker
       .nav-collapse
         %ul.nav
@@ -16,18 +13,9 @@
         %ul.nav.pull-right
           %li.dropdown#search-dropdown
             %form#searchForm.navbar-search
-              %input#searchText.search-query.dropdown-toggle{:placeholder => "Search", :type => "text"}
+              %input#searchText.search-query.dropdown-toggle{:placeholder => "Search", :type => "text", :autocomplete=>"off"}
           %li.dropdown.session-container
             %a.dropdown-toggle{'data-toggle'=>'dropdown',href:'#'}
               =@login
               %b.caret
             %ul.dropdown-menu#session-dropdown
-              %li
-                %a sdofhsdkjfhsd
-              %li
-                %a sdo4234
-              %li 
-                %a sdofsk skdf sdf
-              %li.divider
-              %li 
-                %a.logout{href:''} Logout
