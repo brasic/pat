@@ -23,7 +23,7 @@ class UsersController < ApplicationController
       # login was successful, so set the cookie in the ajax response
       cookies[:pat_user_id] = { 
         value:   JSON.parse(@response.body)['id'],
-        expires: Time.now + 3600
+        expires: Time.now + 3600*24
       }
     end
 
