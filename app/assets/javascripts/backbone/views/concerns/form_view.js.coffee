@@ -33,7 +33,9 @@ class Pat.Views.Concerns.FormView extends Backbone.View
   # add the 'checked' attribute in the form for whatever of the options is checked in the model 
   mark_checked: ->
     status=@model.attributes.status
-    @$("input[type=radio][value=#{status}]").attr('checked','true')
+    @$("input[type=radio][value=#{status}]")
+      .attr('checked','true')
+      .parent().addClass('active')
 
   render: ->
     # @template will be defined by child classes.
