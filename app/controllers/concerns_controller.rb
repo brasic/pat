@@ -2,7 +2,7 @@ class ConcernsController < ApplicationController
   # GET /concerns
   # GET /concerns.json
   def index
-    @concerns = Concern.all
+    @concerns = Concern.all(order: :updated_at.desc)
     @users    = User.all_cached
 
     respond_to do |format|
