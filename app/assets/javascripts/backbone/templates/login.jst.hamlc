@@ -10,4 +10,6 @@
       %label.password
         %span Password
         %input#js-password{:name => "password", :type => "password"}
-      %button.btn.btn-primary.submit{:type => "submit"} Sign in
+      %button.btn.btn-primary.submit{:type => "submit"}
+        %i.icon-white.icon-lock
+        Sign in

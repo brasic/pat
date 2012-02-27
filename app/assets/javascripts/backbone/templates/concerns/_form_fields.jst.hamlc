@@ -20,13 +20,16 @@
 
 .control-group
   %label.control-label{for:"status"} Status:
-  .controls
-    %label.radio
-      %input{type:'radio',name:'status',value:'Open'}
+  .controls.btn-group{'data-toggle'=>'buttons-radio'}
+    %label.radio.btn
+      %i.icon-plus-sign
+      %input.hidden{type:'radio',name:'status',value:'Open'}
       Open
-    %label.radio
-      %input{type:'radio',name:'status',value:'Closed'}
+    %label.radio.btn
+      %i.icon-ok-sign
+      %input.hidden{type:'radio',name:'status',value:'Closed'}
       Closed
-    %label.radio
-      %input{type:'radio',name:'status',value:'Blocked'}
+    %label.radio.btn
+      %i.icon-remove-sign
+      %input.hidden{type:'radio',name:'status',value:'Blocked'}
       Blocked
