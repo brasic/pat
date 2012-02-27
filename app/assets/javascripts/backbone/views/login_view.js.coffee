@@ -22,21 +22,30 @@ class Pat.Views.LoginView extends Backbone.View
     unless e.target.href?
       false
 
+  loginHandler: (e,data) =>
+    if data.error
+      e.preventDefault()
+      e.stopPropagation()
+      @loginWarning(data)
+    else
+      @current_callback() if @current_callback?
+      Header.render()
+
+  loginWarning: (data) =>
+    # make the login flash and stuff to notify failure
+    @$('#login-message').text(data.error)
+    @$('.submit').addClass('btn-danger')
+    @$('.submit').children()
+      .removeClass('icon-lock')
+      .addClass('icon-exclamation-sign')
+    $(@el).parent().effect('highlight',{color:'red'},1000)
+
   submit: (e) =>
     res=Session.login
       credentials:
         username: @$('#js-username').val()
         password: @$('#js-password').val()
-      success : (data) =>
-        if data.error
-          e.preventDefault()
-          e.stopPropagation()
-          @$('.submit').addClass('btn-danger')
-          @$('#login-message').text(data.error)
-          $(@el).parent().effect('highlight',{color:'red'},1000)
-        else
-          @current_callback() if @current_callback?
-          Header.render()
+      success : (data) => @loginHandler(e,data)
       failure: ->
         console.log 'some problem logging in'
 
