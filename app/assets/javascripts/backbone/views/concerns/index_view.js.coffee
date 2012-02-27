@@ -15,12 +15,13 @@ class Pat.Views.Concerns.IndexView extends Backbone.View
   stateToggle: (e) ->
 
     # figure out what class we clicked
-    toggleName = _.intersection(e.target,@concernStates)
+    toggleName = _.intersection(e.target.classList,@concernStates)
 
     # toggle visibility of the row
     @$(".#{toggleName}-row").toggle('slow')
 
   addAll: () =>
+    console.log 'asdfff'
     @options.concerns.each(@addOne)
     @fixUsers()
     @$('.timeago').timeago()
