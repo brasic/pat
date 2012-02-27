@@ -30,3 +30,7 @@ fieldset.js-signin-fields label input{
   text-overflow:ellipsis;
   overflow:hidden;
 }
+
+.navbar .nav #searchForm.open > .dropdown-toggle, .navbar .nav .active > .dropdown-toggle.search-dropdown {
+  background-color:white;
+}
