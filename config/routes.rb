@@ -3,6 +3,7 @@ Pat::Application.routes.draw do
   match 'login' => 'users#login'
 
   resources :concerns
+  match 'concerns/search/:search' => 'concerns#search'
   root to: 'concerns#index'
 
   # The priority is based upon order of creation:

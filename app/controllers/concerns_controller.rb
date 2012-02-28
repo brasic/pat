@@ -11,6 +11,12 @@ class ConcernsController < ApplicationController
     end
   end
 
+  # GET /concerns/search/#{string}
+  # returns a list of ids and titles which match the search query string.
+  def search
+    render json: Concern.search(params[:search])
+  end
+
   # GET /concerns/1
   # GET /concerns/1.json
   def show

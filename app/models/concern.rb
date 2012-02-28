@@ -22,5 +22,22 @@ class Concern
   def self.relevant_users
     User.all_cached.select{|x| x.id.in? self.user_ids}
   end
+  
+  # return a list of {id:x, title:y} results for use by the frontend in searches
+  def self.search(query="")
+    if query.empty?
+      all
+    else
+      all(
+        # return all hashes where a text field matches the query
+        "$or"=>[ 
+          {:title          => /#{query}/i}, 
+          {:content        => /#{query}/i}, 
+          {"comments.text" => /#{query}/i}
+        ])
+    end.
+      # make an array of id and title hashes
+      map{|x| {id: x.id, title: x.title}}
+  end
 
 end
