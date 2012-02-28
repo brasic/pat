@@ -26,6 +26,7 @@ class Pat.Views.Concerns.IndexView extends Backbone.View
   addAll: () =>
     @options.concerns.each(@addOne)
     @fixUsers()
+    @$('.timeago').timeago()
 
   # replace each id hash with a user name
   fixUsers: ->

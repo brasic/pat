@@ -9,6 +9,7 @@
   %tr
     %th Title
     %th Creator
+    %th Updated
     %th Status
     %th.actions Actions
 

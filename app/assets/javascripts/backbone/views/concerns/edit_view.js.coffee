@@ -1,5 +1,6 @@
 #= require backbone/views/concerns/form_view
 
+# TODO need to refresh page for updated_at to display correctly
 class Pat.Views.Concerns.EditView extends Pat.Views.Concerns.FormView
   template:     JST["backbone/templates/concerns/edit"]
 
