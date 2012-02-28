@@ -1,7 +1,7 @@
 class Pat.Views.LoginView extends Backbone.View
   templates:
     false:  JST["backbone/templates/login"]
-    true:  _.template "<li><a href='javascript:Session.destroy()' class='logout'>Log out</a></li>"
+    true:  _.template "<li><a href='#' class='logout'>Log out</a></li>"
 
   initialize: ->
     @current_callback = null
@@ -11,8 +11,9 @@ class Pat.Views.LoginView extends Backbone.View
     "click button.submit" : "submit"
     "click .logout"       : "logout"
 
-  logout: ->
+  logout: (e) ->
     Session.destroy()
+    false
 
   # stop the normal behavior of getting rid of the menu on click
   # TODO after the login, the handlers go away.  why? 
