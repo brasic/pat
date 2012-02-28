@@ -3,11 +3,25 @@ Pat.Views.Concerns ||= {}
 class Pat.Views.Concerns.IndexView extends Backbone.View
   template: JST["backbone/templates/concerns/index"]
 
+  concernStates: ['Blocked','Closed','Open']
+
   events:
     "click .auth-required" : "check_login_status"
+    "click .state-toggle"  : "stateToggle"
 
   initialize: () ->
     @options.concerns.bind('reset', @addAll)
+
+  stateToggle: (e) ->
+
+    # figure out what class we clicked
+    toggleName = _.intersection(e.target,@concernStates)
+
+    # toggle visibility of the row
+    @$(".#{toggleName}-row").toggle('slow')
+
+    # toggle 'pushed' animation of the button 
+    $(e.target).toggleClass('active')
 
   addAll: () =>
     @options.concerns.each(@addOne)

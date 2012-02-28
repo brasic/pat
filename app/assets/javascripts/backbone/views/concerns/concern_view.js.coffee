@@ -24,4 +24,7 @@ class Pat.Views.Concerns.ConcernView extends Backbone.View
 
   render: ->
     $(@el).html(@template(@model.toJSON() ))
+
+    # add the status of the row as a class for later use.
+    $(@el).addClass "#{@model.attributes.status}-row"
     this

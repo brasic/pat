@@ -1,5 +1,10 @@
 %h1 Listing concerns
 
+.btn-group.state-toggle{'data-toggle'=>"buttons-checkbox"}
+  %button.btn.active.btn-danger.Blocked Blocked
+  %button.btn.active.btn-success.Closed Closed
+  %button.btn.active.btn-warning.Open.btn-primary Open
+
 %table#concerns-table.table.table-bordered.table-striped
   %tr
     %th Title

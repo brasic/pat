@@ -5,3 +5,11 @@
     display:inline;
   }
 }
+
+div.state-toggle{
+  float:right;
+  margin-bottom:1em;
+  .active{
+    border: 1px solid black;
+  }
+}
