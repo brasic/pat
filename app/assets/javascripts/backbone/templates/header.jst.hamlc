@@ -11,7 +11,7 @@
           %li#nav-index
             %a{:href => "#/index"} Concerns
         %ul.nav.pull-right
-          %li.dropdown
+          %li.dropdown#search-dropdown
             %form#searchForm.navbar-search
               %input#searchText.search-query.dropdown-toggle{:placeholder => "Search", :type => "text"}
           %li.dropdown.session-container

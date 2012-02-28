@@ -11,6 +11,10 @@ class Pat.Views.Concerns.ShowView extends Backbone.View
   events:
     "click .new-comment"    : "open_comment_box"
     "click .auth-required"  : "check_login_status"
+    "click"                 : "closeSearch"
+
+  closeSearch: ->
+    Header.closeSearch()
 
   open_comment_box: (e) ->
     if Session.authenticated()

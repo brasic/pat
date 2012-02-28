@@ -3,7 +3,12 @@ class Pat.Views.HeaderView extends Backbone.View
 
   initialize: ->
     window.Header = this
-    @login=new Pat.Views.LoginView()
+    @login=new Pat.Views.LoginView
+    @searchResults = new Pat.Collections.SearchResultsCollection
+    @searchresultsView = new Pat.Views.Concerns.SearchView(
+      model:@searchResults,
+      className:'dropdown-menu'
+    )
 
     # @searchResults = new ConcernCollection()
     # @searchresultsView = new ConcernListView(
@@ -20,6 +25,7 @@ class Pat.Views.HeaderView extends Backbone.View
   render: (eventName) ->
     console.log 'rendering'
     $(@el).html @template(login:@login_status())
+    $('.navbar-search', this.el).append(@searchresultsView.render().el)
     @$('#session-dropdown').html(@login.render().el)
     @$('.dropdown-toggle').dropdown()
 
@@ -35,12 +41,15 @@ class Pat.Views.HeaderView extends Backbone.View
     "keyup .search-query": "search"
     "click .nav li"      : "press_nav_button"
 
+  closeSearch: ->
+    $("#search-dropdown").removeClass('open')
+
   search: (event) ->
-    # key = $("#searchText").val()
-    # console.log "search " + key
-    # @searchResults.findByName key
-    # setTimeout ->
-    #   $("#searchForm").addClass "open"
+     key = $("#searchText").val()
+     console.log "search " + key
+     @searchResults.findByName key
+     setTimeout ->
+       $("#search-dropdown").addClass "open"
 
   press_nav_button: (event) ->
 

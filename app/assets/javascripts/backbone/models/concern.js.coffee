@@ -14,5 +14,19 @@ class Pat.Models.Concern extends Backbone.Model
     status: "Open"
 
 class Pat.Collections.ConcernsCollection extends Backbone.Collection
+
   model: Pat.Models.Concern
   url: '/concerns'
+
+class Pat.Collections.SearchResultsCollection extends Backbone.Collection
+
+  model: Pat.Models.Concern
+  url: '/concerns'
+
+  findByName: (key) ->
+    url = "concerns/search/#{key}"
+    $.ajax
+      url: url
+      dataType: "json"
+      success: (data) =>
+        @reset data
