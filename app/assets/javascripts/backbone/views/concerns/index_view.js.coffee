@@ -20,9 +20,6 @@ class Pat.Views.Concerns.IndexView extends Backbone.View
     # toggle visibility of the row
     @$(".#{toggleName}-row").toggle('slow')
 
-    # toggle 'pushed' animation of the button 
-    $(e.target).toggleClass('active')
-
   addAll: () =>
     @options.concerns.each(@addOne)
     @fixUsers()
