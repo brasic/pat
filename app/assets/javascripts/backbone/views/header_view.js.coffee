@@ -28,6 +28,9 @@ class Pat.Views.HeaderView extends Backbone.View
     $('.navbar-search', this.el).append(@searchresultsView.render().el)
     @$('#session-dropdown').html(@login.render().el)
     @$('.dropdown-toggle').dropdown()
+    @$('.search-query').bindWithDelay('keyup', =>
+      @search()
+    , 200)
 
     this
 
@@ -38,7 +41,6 @@ class Pat.Views.HeaderView extends Backbone.View
       "Log in"
 
   events:
-    "keyup .search-query": "search"
     "click .nav li"      : "press_nav_button"
 
   closeSearch: ->
