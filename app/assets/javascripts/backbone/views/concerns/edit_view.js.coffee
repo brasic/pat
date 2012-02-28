@@ -12,5 +12,6 @@ class Pat.Views.Concerns.EditView extends Pat.Views.Concerns.FormView
 
   update: (e) ->
     @model.unset("errors")
+    @model.attributes.updater_id=Session.user().id
     @model.save(null,@response_handlers(@model))
     false

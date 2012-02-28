@@ -11,5 +11,6 @@ class Pat.Views.Concerns.NewView extends Pat.Views.Concerns.FormView
 
   save: (e) ->
     @model.unset("errors")
+    @model.attributes.updater_id=@model.attributes.creator_id=Session.user().id
     @collection.create(@model.toJSON(),@response_handlers(@model))
     false

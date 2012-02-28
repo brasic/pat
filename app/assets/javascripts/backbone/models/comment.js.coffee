@@ -4,8 +4,8 @@ class Pat.Models.Comment extends Backbone.Model
   paramRoot: 'comment'
 
   initialize: (options) ->
-    @attributes.creator_id ||= window.currentUser
-    @attributes.updater_id ||= window.currentUser
+    @attributes.creator_id ||= Session.user().id
+    @attributes.updater_id ||= Session.user().id
     @attributes.created_at ||= new Date().toISOString()
     @attributes.updated_at ||= new Date().toISOString()
     @id ||= ObjectId()
