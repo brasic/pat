@@ -1,5 +1,2 @@
 .hero-unit{:style => "height:260px;"}
-  %h2 STS Incident Tracker
-  %p  
-  %img{:alt => "", :height => "200", :src => "assets/quality.jpg", :style => "float:left", :width => "300"}
-    %p{:style => "padding-top:50px;padding-left:340px;"}
+  %h1 STS Incident Tracker
