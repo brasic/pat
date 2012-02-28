@@ -1,6 +1,7 @@
 Pat::Application.routes.draw do
-  resources :users
   match 'login' => 'users#login'
+  match 'users/expire' => 'users#expire'
+  resources :users
 
   resources :concerns
   match 'concerns/search/:search' => 'concerns#search'

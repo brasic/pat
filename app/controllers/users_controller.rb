@@ -10,6 +10,11 @@ class UsersController < ApplicationController
     end
   end
 
+  def expire
+    render json: User.expire
+  end
+
+
   def login
 
     # make a call to the login server with the user's credentials

@@ -17,7 +17,7 @@ class Pat.Views.LoginView extends Backbone.View
   # stop the normal behavior of getting rid of the menu on click
   # TODO after the login, the handlers go away.  why? 
   prevent: (e) ->
-    console.log 'prevent'
+
     # only allow links through
     unless e.target.href?
       false
@@ -29,7 +29,16 @@ class Pat.Views.LoginView extends Backbone.View
       @loginWarning(data)
     else
       @current_callback() if @current_callback?
+      @initialize()
+      @handleUnknownUser(data) unless Users.get(data)?
       Header.render()
+
+  # if this is a user we've never seen before, add it to our collection 
+  # and make sure the server knows to check for it on next refresh
+  handleUnknownUser: (data) ->
+    Users.add(data)
+    Session.expireUserCache()
+
 
   loginWarning: (data) =>
     # make the login flash and stuff to notify failure

@@ -10,6 +10,10 @@ class User < ActiveResource::Base
     end
   end
 
+  def self.expire
+    Rails.cache.delete("remote_users")
+  end
+
   # calls the remote LS server to log in
   def self.login(username,password)
     begin

@@ -37,3 +37,9 @@ class Pat.Models.Session extends Backbone.Model
         options.error(data)
     )
 
+  # just hit the endpoint to invalidate it's user cache
+  expireUserCache: ->
+    $.ajax(
+      url: "/users/expire"
+    )
+
