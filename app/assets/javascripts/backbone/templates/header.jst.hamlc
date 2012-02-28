@@ -10,6 +10,9 @@
         %ul.nav
           %li#nav-index
             %a{:href => "#/index"} Concerns
+        %ul.nav
+          %li
+            %a{:href => "http://ls"} LS
         %ul.nav.pull-right
           %li.dropdown#search-dropdown
             %form#searchForm.navbar-search
