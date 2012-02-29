@@ -43,21 +43,18 @@ class Pat.Collections.SearchResultsCollection extends Backbone.QueryCollection
     # get our data from the main concerns collection
     matches = app.concerns.query
 
-      # return any model which matches any of the following 3 conditions:
+      # return any model which matches any of the following conditions:
       $or:
 
         # If the title or content matches our query
         title:    isLikeQuery
         content:  isLikeQuery
 
-        # Or, if any of the comments respond true to this callback function:
-        comments: $cb: (comments) ->
-
-          # the callback iterates through all the post's comments,
-          _(comments).any (comment) ->
-
-            # returning true if the query is a substring of the comment text
-            comment.text.toLowerCase().indexOf(query.toLowerCase()) isnt -1
+        # Or, if any of the comments in the array 
+        # have a text attribute that matches
+        comments:
+          $elemMatch:
+            text: isLikeQuery
 
     # populate our collection with the returned matches
     @reset matches
