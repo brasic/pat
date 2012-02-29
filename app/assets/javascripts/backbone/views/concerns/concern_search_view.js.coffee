@@ -2,6 +2,11 @@ class Pat.Views.Concerns.SearchView extends Backbone.View
   tagName: "ul"
   className: "nav nav-list"
 
+  events:
+    "click" : "scroll_to_top"
+
+  scroll_to_top: -> window.scroll_to_top()
+
   initialize: ->
     self = this
     @model.bind "reset", @render, this
