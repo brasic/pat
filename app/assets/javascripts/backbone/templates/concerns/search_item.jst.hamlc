@@ -1,1 +1,3 @@
-%a{href:"#/#{@id}"}=@title
+%a{href:"#/#{@id}"}
+  .linktext= @title
+  %span.label.status.inline{class: @status}= @status

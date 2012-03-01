@@ -13,3 +13,22 @@ div.state-toggle{
     border: 1px solid black;
   }
 }
+
+.navbar-search{
+  .linktext{
+    overflow:hidden;
+    width:69%;
+    text-overflow:ellipsis;
+  }
+  .label{
+    float: right;
+    line-height: 8px;
+    padding: 2px;
+    display: block;
+    margin-bottom: -10px;
+    top: -15px;
+    position: relative;
+    padding-bottom: 3px;
+  }
+}
+
