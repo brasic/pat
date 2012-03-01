@@ -37,24 +37,28 @@ class Pat.Collections.SearchResultsCollection extends Backbone.QueryCollection
   # see https://github.com/davidgtonge/backbone_query
   findByName: (query) ->
 
-    # helper subquery to match substrings. A pseudo-regex.
+    # ignore the search for blank inputs
+    if query is ""
+      @reset()
+      return
+
+    # helper subquery to match substrings.
     isLikeQuery = { $likeI: query }
 
-    # get our data from the main concerns collection
+    # get data from the main collection
     matches = app.concerns.query
 
-      # return any model which matches any of the following conditions:
+      # return any model which matches our fields
       $or:
-
-        # If the title or content matches our query
         title:    isLikeQuery
+        status:   isLikeQuery
         content:  isLikeQuery
 
-        # Or, if any of the comments in the array 
-        # have a text attribute that matches
+        # or if a model has any comments
+        # with a matching text field
         comments:
           $elemMatch:
             text: isLikeQuery
 
-    # populate our collection with the returned matches
+    # populate the result with the matches
     @reset matches
