@@ -1,4 +1,4 @@
-<%= form_for(@concern) do |f| %>
+<%= nested_form_for(@concern, :html => { :multipart => true }) do |f| %>
   <% if @concern.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(@concern.errors.count, "error") %> prohibited this concern from being saved:</h2>
@@ -19,6 +19,14 @@
     <%= f.label :content %><br />
     <%= f.text_field :content %>
   </div>
+
+  <%= f.fields_for :attachments do |task_form| %>
+    <%= task_form.file_field :file %>
+    <%= task_form.link_to_remove "Remove this file" %>
+  <% end %>
+  <p><%= f.link_to_add "Add a file", :files %></p>
+
+
   <div class="actions">
     <%= f.submit %>
   </div>

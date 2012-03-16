@@ -2,6 +2,7 @@ class Concern
   include MongoMapper::Document
   plugin AttachIt
 
+  attr_accessible :attachments_attributes
 
   key :title
   key :content
@@ -14,6 +15,8 @@ class Concern
 
   validates_presence_of :title
   validates_presence_of :content
+
+  accepts_nested_attributes_for :attachments
 
   # list of all the user ids used by the concerns and comments
   def self.user_ids
