@@ -1,4 +1,4 @@
-%h1 Listing concerns
+%h1 Notes
 
 .btn-group.state-toggle{'data-toggle'=>"buttons-checkbox"}
   %button.btn.active.btn-danger.Blocked Blocked
@@ -17,4 +17,4 @@
 
 %a#new-concern.btn.btn-primary.auth-required{:href=>"#/new"}
   %i.icon-file.icon-white
-  New Concern
+  Add a note

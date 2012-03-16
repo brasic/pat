@@ -6,7 +6,7 @@
       .nav-collapse
         %ul.nav
           %li#nav-index
-            %a{:href => "#/index"} Concerns
+            %a{:href => "#/index"} Notes
         %ul.nav
           %li
             %a{:href => "http://ls",target: '_blank'} LS

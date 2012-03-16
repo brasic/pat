@@ -1,5 +1,5 @@
 .fieldset
-  %legend #{@type.capitalize()} Concern
+  %legend #{@type.capitalize()} Note
 
   = @_form_fields(@model.attributes)
 
