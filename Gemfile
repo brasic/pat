@@ -26,6 +26,8 @@ gem 'haml'
 # client side
 gem 'twitter-bootstrap-rails'
 gem 'haml_coffee_assets', '~> 0.6.0'
+gem "mm-attach-it"
+
 
 
 

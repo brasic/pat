@@ -1,10 +1,13 @@
 class Concern
   include MongoMapper::Document
+  plugin AttachIt
+
 
   key :title
   key :content
   key :status
 
+  many :attachments
   many :comments
   timestamps!
   userstamps!
