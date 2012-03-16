@@ -1,2 +1,2 @@
 .hero-unit{:style => "height:260px;"}
-  %h1 STS Incident Tracker
+  %h1 Technical Notes

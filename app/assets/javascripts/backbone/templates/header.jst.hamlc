@@ -2,7 +2,7 @@
   .navbar-inner
     .container
       %a.btn.btn-navbar{"data-target" => ".nav-collapse", "data-toggle" => "collapse"}
-      %a.brand Action Tracker
+      %a.brand Technical Notes
       .nav-collapse
         %ul.nav
           %li#nav-index
