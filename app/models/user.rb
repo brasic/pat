@@ -5,8 +5,13 @@ class User < ActiveResource::Base
 
   # only fetch this once in a while
   def self.all_cached
-    Rails.cache.fetch("remote_users", :expires_in => 30.minutes) do
-      self.find(:all)
+    begin
+      Rails.cache.fetch("remote_users", :expires_in => 30.minutes) do
+        self.find(:all)
+      end
+    rescue Errno::ECONNREFUSED 
+      warn "Not able to connect to the auth server, login will be unavailable..."
+      []
     end
   end
 
