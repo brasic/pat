@@ -15,6 +15,14 @@ Installing
  * Authentication is handled by LS, so change ``app/models/user.rb`` to point to a working LS install (like [http://ls](http://ls.ic.ncs.com)) or just don't use auth. (For development, you can run a local LS install on port 3001)
  * ``rails server``
 
+
+Screenshots
+===
+![index](http://pearson-ai.github.com/pat/images/index.png)
+
+![concern](http://pearson-ai.github.com/pat/images/concern.png)
+
+
 More info
 ===
 
