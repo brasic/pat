@@ -27,9 +27,6 @@ gem 'haml'
 gem 'twitter-bootstrap-rails'
 gem 'haml_coffee_assets', '~> 0.6.0'
 gem "mm-attach-it"
-gem 'mm-nested-attributes', :git => 'git://github.com/pollingj/mm-nested-attributes.git'
-gem 'nested_form'
-gem 'remotipart', '~> 1.0'
 
 
 
