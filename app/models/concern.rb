@@ -1,6 +1,5 @@
 class Concern
   include MongoMapper::Document
-  plugin AttachIt
 
   key :title
   key :content
